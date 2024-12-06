@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmation Page</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(135deg, #350ae1 0%, #030654 50%, #dd86c4 100%);
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      height: calc(100vh - 150px); /* Reserve space for the footer */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title {
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      font-size: 28px;
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .title h5 {
+      font-size: 16px;
+      font-weight: normal;
+      margin: 5px 0 0 0;
+      color: #f0f0f0;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    .moving-icon {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      transition: all 0.09s ease-in-out;
+      z-index: 1001; /* Ensure it is above the waves */
+    }
+
+    .footer {
+      position: relative;
+      width: 100%;
+      background: #3b86f7;
+      min-height: 150px;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .social-icon,
+    .menu {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 0;
+      flex-wrap: wrap;
+    }
+
+    .social-icon__item,
+    .menu__item {
+      list-style: none;
+    }
+
+    .social-icon__link {
+      font-size: 2rem;
+      color: #fff;
+      margin: 0 10px;
+      display: inline-block;
+      transition: 0.5s;
+    }
+    .social-icon__link:hover {
+      transform: translateY(-10px);
+    }
+
+    .menu__link {
+      font-size: 1.2rem;
+      color: #fff;
+      margin: 0 10px;
+      display: inline-block;
+      transition: 0.5s;
+      text-decoration: none;
+      opacity: 0.75;
+      font-weight: 300;
+    }
+
+    .menu__link:hover {
+      opacity: 1;
+    }
+
+    .footer p {
+      color: #fff;
+      margin: 15px 0 10px 0;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    .wave {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: url("https://i.ibb.co/wQZVxxk/wave.png");
+      background-size: 1000px 100px;
+    }
+
+    .wave#wave1 {
+      z-index: 1000;
+      opacity: 1;
+      bottom: 0;
+      animation: animateWaves 4s linear infinite;
+    }
+
+    .wave#wave2 {
+      z-index: 999;
+      opacity: 0.5;
+      bottom: 10px;
+      animation: animate 4s linear infinite !important;
+    }
+
+    .wave#wave3 {
+      z-index: 1000;
+      opacity: 0.2;
+      bottom: 15px;
+      animation: animateWaves 3s linear infinite;
+    }
+
+    .wave#wave4 {
+      z-index: 999;
+      opacity: 0.7;
+      bottom: 20px;
+      animation: animate 3s linear infinite;
+    }
+
+    @keyframes animateWaves {
+      0% {
+        background-position-x: 1000px;
+      }
+      100% {
+        background-position-x: 0px;
+      }
+    }
+
+    @keyframes animate {
+      0% {
+        background-position-x: -1000px;
+      }
+      100% {
+        background-position-x: 0px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">
+        Confirm Your Choice
+        <h5>by clicking the dolphin</h5>
+    </div>
+    <img id="confirmIcon" class="moving-icon" src="Cute-Dolphin.1024-1433372463.png" alt="Dolphin Icon">
+  </div>
+
+  <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+    </ul>
+    <p>&copy;2021 Nadine Coelho | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const icon = document.getElementById('confirmIcon');
+    const container = document.querySelector('.container');
+
+    let isCaught = false;
+
+    icon.addEventListener('mouseenter', () => {
+      const containerBounds = container.getBoundingClientRect();
+      const iconBounds = icon.getBoundingClientRect();
+
+      const maxX = containerBounds.width - iconBounds.width;
+      const maxY = containerBounds.height - iconBounds.height;
+
+      const newX = Math.random() * maxX;
+      const newY = Math.random() * maxY;
+
+      icon.style.left = `${newX}px`;
+      icon.style.top = `${newY}px`;
+    });
+
+    icon.addEventListener('click', () => {
+      isCaught = true;
+      alert('You caught the dolphin! Moving to the next page...');
+    });
+
+    setTimeout(() => {
+      if (!isCaught) {
+        const message = document.createElement('div');
+        message.innerText = "You can click now, nooby!";
+        message.style.position = 'absolute';
+        message.style.top = '60%';
+        message.style.left = '50%';
+        message.style.transform = 'translate(-50%, -50%)';
+        message.style.fontSize = '20px';
+        message.style.color = '#fff';
+        message.style.backgroundColor = '#ff4d4d';
+        message.style.padding = '10px 20px';
+        message.style.borderRadius = '5px';
+        message.style.boxShadow = '2px 2px 10px rgba(0, 0, 0, 0.5)';
+        container.appendChild(message);
+
+        icon.style.transition = 'all 3s ease-in-out';
+        icon.style.transform = 'scale(3.5)';
+      }
+    }, 18000);
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
