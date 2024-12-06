@@ -1,0 +1,17 @@
+import './App.css';
+
+function App() {
+  return (
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h1>welcome Kiddy</h1>
+      <div className="buttonContainer">
+        <button>Play Game</button>
+        <button>Watch Video</button>
+        <button>Read Story</button>
+        <button>Learn Alphabet</button>
+      </div>
+    </div>
+  );
+}
+
+export default App;
